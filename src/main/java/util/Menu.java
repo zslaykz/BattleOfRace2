@@ -2,18 +2,21 @@ package util;
 
 import hero.Unit;
 import hero.impl.*;
-
 public class Menu {
 
     public static void welcome() {
         System.out.println("Hello welcome to oue game");
-        System.out.println("Now you have to create command");
+        System.out.println("Now you have to create your hero");
     }
 
     public static void printHeroesVariants() {
-        System.out.println("Please choose a hero \n press 1 for Human Priest\n " +
-                "press 2 for Human Paladin\n press 3 for Dwarf Warrior\n " +
-                "press 4 for Dwarf Mechanist\n press 5 for Elf Mage\n press 6 for Elf Gunslinger");
+        System.out.println("Please choose a hero " +
+                "\n press 1 for Human Priest\n " +
+                "press 2 for Human Tank" +
+                "\n press 3 for Dwarf Warrior\n " +
+                "press 4 for Dwarf Crafter" +
+                "\n press 5 for Elf Mage" +
+                "\n press 6 for Elf Paladin");
     }
 
 
@@ -44,16 +47,18 @@ public class Menu {
             Unit unit = new ElfPaladin();
             setHeroStats(unit);
             System.out.println(unit);
-        } else System.out.println("Invalid input");
+        } else System.out.println("please enter correct");
     }
 
     private static void setHeroStats(Unit unit) {
-        System.out.println("Set hero name");
+        System.out.println("Enter the name of your hero");
         String name = ScannerUtil.getString();
         unit.setName(name);
-        System.out.println("Set hero Charisma. (Basic " + unit.getClass().getSimpleName() +
-                " Charisma = " + unit.getCharisma() + ")");
-        unit.setCharisma(unit.getCharisma() + ScannerUtil.getInt());
+        int c = ScannerUtil.getInt();
+        addPoints(c);
+        System.out.println("Set hero Charisma. (Basic " + unit.getClass().getSimpleName()
+                +" Charisma = " + unit.getCharisma() + ")");
+        unit.setCharisma(unit.getCharisma() + c);
         System.out.println("Set hero Stamina. (Basic " + unit.getClass().getSimpleName() +
                 " Stamina = " + unit.getStamina() + ")");
         unit.setStamina(unit.getStamina() + ScannerUtil.getInt());
@@ -66,18 +71,19 @@ public class Menu {
         System.out.println("Set hero Concentration. (Basic " + unit.getClass().getSimpleName() +
                 " Concentration = " + unit.getCharisma() + ")");
         unit.setConcentration(unit.getConcentration() + ScannerUtil.getInt());
+
     }
 
-    private static int pointsValue(int maxPointValue) {
-        while (true) {
-            int inputPointValue = ScannerUtil.getInt();
-            if (maxPointValue >= inputPointValue && inputPointValue < 0) {
-                return inputPointValue;
+    private static int addPoints(int maxPoint){
+        int point = 100;
+        while (true){
+            int inputPoint = ScannerUtil.getInt();
+            if (maxPoint >= inputPoint && inputPoint < 0){
+                return inputPoint;
             }
             System.out.println("To much points");
         }
 
-
     }
-
 }
+
