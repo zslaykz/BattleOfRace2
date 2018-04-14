@@ -1,14 +1,14 @@
-package hero.impl;
+package game.hero.impl;
 
-import abillity.Crafter;
-import hero.Unit;
-import race.Dwarf;
+import game.abillity.Priest;
+import game.hero.Unit;
+import game.race.Human;
 
-public class DwarfCrafter extends Dwarf implements Unit, Crafter {
+public class HumanPriest extends Human implements Priest, Unit {
 
     @Override
-    public String toString(){
-        return ("Dwarf Mechanist " + this.getName() + "\n" +
+    public String toString() {
+        return ("Human priest " + this.getName() + "\n" +
                 "charisma = " + this.getCharisma() + "\n"
                 + "stamina = " + this.getStamina() + "\n"
                 + "intellect = " + this.getIntellect() + "\n"

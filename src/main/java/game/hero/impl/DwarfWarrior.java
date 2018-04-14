@@ -1,8 +1,8 @@
-package hero.impl;
+package game.hero.impl;
 
-import abillity.Warlord;
-import hero.Unit;
-import race.Dwarf;
+import game.abillity.Warlord;
+import game.hero.Unit;
+import game.race.Dwarf;
 
 public class DwarfWarrior extends Dwarf implements Warlord, Unit {
 

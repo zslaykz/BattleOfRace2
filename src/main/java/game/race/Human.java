@@ -1,4 +1,4 @@
-package race;
+package game.race;
 
 
 import lombok.Getter;
@@ -6,10 +6,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class Human {
+public  class Human extends Race {
 
-    private boolean isLeader;
-    private String name;
     private int charisma = 10;
     private int stamina = 30;
     private int intellect = 20;

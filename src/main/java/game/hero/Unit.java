@@ -1,4 +1,4 @@
-package hero;
+package game.hero;
 
 public interface Unit {
 

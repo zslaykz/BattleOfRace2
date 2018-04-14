@@ -1,14 +1,13 @@
-package race;
+package game.race;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class Dwarf {
+public  class Dwarf extends Race {
 
-    private boolean isLeader;
-    private String name;
+
     private int charisma = 5;
     private int stamina = 45;
     private int intellect = 15;

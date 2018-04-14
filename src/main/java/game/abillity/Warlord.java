@@ -1,4 +1,4 @@
-package abillity;
+package game.abillity;
 
 public interface Warlord {
 }

@@ -1,16 +1,16 @@
-package util;
+package game.util;
 
-import hero.Unit;
-import hero.impl.*;
+import game.hero.Unit;
+import game.hero.impl.*;
 public class Menu {
 
     public static void welcome() {
         System.out.println("Hello welcome to oue game");
-        System.out.println("Now you have to create your hero");
+        System.out.println("Now you have to create your game.hero");
     }
 
     public static void printHeroesVariants() {
-        System.out.println("Please choose a hero " +
+        System.out.println("Please choose a game.hero " +
                 "\n press 1 for Human Priest\n " +
                 "press 2 for Human Tank" +
                 "\n press 3 for Dwarf Warrior\n " +
@@ -51,24 +51,22 @@ public class Menu {
     }
 
     private static void setHeroStats(Unit unit) {
-        System.out.println("Enter the name of your hero");
+        System.out.println("Enter the name of your game.hero");
         String name = ScannerUtil.getString();
         unit.setName(name);
-        int c = ScannerUtil.getInt();
-        addPoints(c);
-        System.out.println("Set hero Charisma. (Basic " + unit.getClass().getSimpleName()
+        System.out.println("Set game.hero Charisma. (Basic " + unit.getClass().getSimpleName()
                 +" Charisma = " + unit.getCharisma() + ")");
-        unit.setCharisma(unit.getCharisma() + c);
-        System.out.println("Set hero Stamina. (Basic " + unit.getClass().getSimpleName() +
+        unit.setCharisma(unit.getCharisma() + ScannerUtil.getInt());
+        System.out.println("Set game.hero Stamina. (Basic " + unit.getClass().getSimpleName() +
                 " Stamina = " + unit.getStamina() + ")");
         unit.setStamina(unit.getStamina() + ScannerUtil.getInt());
-        System.out.println("Set hero Intellect. (Basic " + unit.getClass().getSimpleName() +
+        System.out.println("Set game.hero Intellect. (Basic " + unit.getClass().getSimpleName() +
                 " Intellect = " + unit.getIntellect() + ")");
         unit.setIntellect(unit.getIntellect() + ScannerUtil.getInt());
-        System.out.println("Set hero Agility. (Basic " + unit.getClass().getSimpleName() +
+        System.out.println("Set game.hero Agility. (Basic " + unit.getClass().getSimpleName() +
                 " Agility = " + unit.getAgility() + ")");
         unit.setAgility(unit.getAgility() + ScannerUtil.getInt());
-        System.out.println("Set hero Concentration. (Basic " + unit.getClass().getSimpleName() +
+        System.out.println("Set game.hero Concentration. (Basic " + unit.getClass().getSimpleName() +
                 " Concentration = " + unit.getCharisma() + ")");
         unit.setConcentration(unit.getConcentration() + ScannerUtil.getInt());
 
